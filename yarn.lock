@@ -16,6 +16,11 @@
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+"@types/node@^15.12.2":
+  version "15.12.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.12.2.tgz#1f2b42c4be7156ff4a6f914b2fb03d05fa84e38d"
+  integrity sha512-zjQ69G564OCIWIOHSXyQEEDpdpGl+G348RAKY0XXy9Z5kU9Vzv1GMNnkar/ZJ8dzXB3COzD9Mo9NtRZ4xfgUww==
+
 abort-controller@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
@@ -95,6 +100,11 @@ tweetnacl@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
   integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
+
+typescript@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.2.tgz#399ab18aac45802d6f2498de5054fcbbe716a805"
+  integrity sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==
 
 ws@^7.4.4:
   version "7.4.6"

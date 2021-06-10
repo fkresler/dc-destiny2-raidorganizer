@@ -1,11 +1,11 @@
-const Discord = require("discord.js");
+import { Client } from "discord.js";
 require("dotenv").config();
 
 const config = {
   prefix: "!",
 };
 
-const client = new Discord.Client();
+const client = new Client();
 
 client.on("ready", () => {
   console.log("Bot is ready");
@@ -25,7 +25,11 @@ client.on("message", (message) => {
   if (message.content.indexOf(config.prefix) !== 0) return;
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
+  const preCheckCommand = args.shift();
+
+  if (!preCheckCommand) return;
+
+  const command = preCheckCommand.toLowerCase();
   console.log("The created command is:", command);
   console.log("The args for the command are:", args);
 
@@ -33,6 +37,8 @@ client.on("message", (message) => {
     message.channel.send("Pong!");
   } else if (command === "blah") {
     message.channel.send("Meh.");
+  } else if (command === "typescript") {
+    message.channel.send("TYPESCRIPT IT IS BITCHES");
   } else if (command === "raids") {
     if (args.length > 0) {
       // Try to create new raid
