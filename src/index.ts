@@ -1,5 +1,7 @@
-import { Client } from "discord.js";
 require("dotenv").config();
+
+import { Client } from "discord.js";
+import { cmdRaidHandler } from "./cmdRaidHandler";
 
 const config = {
   prefix: "!",
@@ -15,7 +17,7 @@ client.on("error", (e) => console.error(e));
 client.on("warn", (e) => console.warn(e));
 client.on("debug", (e) => console.info(e));
 
-client.on("message", (message) => {
+client.on("message", async (message) => {
   console.log("New message:", message.content);
 
   // Do not handle bot messages
@@ -27,6 +29,7 @@ client.on("message", (message) => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const preCheckCommand = args.shift();
 
+  // Do not handle non commands - typescript safety
   if (!preCheckCommand) return;
 
   const command = preCheckCommand.toLowerCase();
@@ -35,20 +38,8 @@ client.on("message", (message) => {
 
   if (command === "ping") {
     message.channel.send("Pong!");
-  } else if (command === "blah") {
-    message.channel.send("Meh.");
-  } else if (command === "typescript") {
-    message.channel.send("TYPESCRIPT IT IS BITCHES");
-  } else if (command === "raids") {
-    if (args.length > 0) {
-      // Try to create new raid
-      message.channel.send(
-        "Here you will need to add your raid infos in the future"
-      );
-    } else {
-      // Display raids
-      message.channel.send("YO BROTHA THERES NO RAIDS RIGHT NOW");
-    }
+  } else if (command === "raid") {
+    await cmdRaidHandler(message, args);
   }
 });
 
