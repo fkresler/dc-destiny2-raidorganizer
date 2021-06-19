@@ -33,8 +33,6 @@ client.on("message", async (message) => {
   if (!preCheckCommand) return;
 
   const command = preCheckCommand.toLowerCase();
-  console.log("The created command is:", command);
-  console.log("The args for the command are:", args);
 
   if (command === "ping") {
     message.channel.send("Pong!");
