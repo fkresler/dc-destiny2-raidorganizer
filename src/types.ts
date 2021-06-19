@@ -6,7 +6,8 @@ export type GuildRaidData = {
 
 export type RaidEntry = {
   id: string;
-  datetime: string;
+  author: string;
+  date: string;
   title: string;
   description: string;
   participants: string[];
